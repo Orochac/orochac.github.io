@@ -1,5 +1,22 @@
 ---
-layout: post
+layout: single
+title:  "My first post"
+date:   2024-07-12 21:04:40 +0700
+categories: jekyll update
+author_profile: true
+---
+This is my first post.
+
+I would like to add in an image here:
+![image-left](/assets/images/Trip_plan.png){: .align-left}
+
+Then some more text and then a fact.
+
+
+Fun Fact this is a fun fact.
+{: .notice--info}
+<!-- ---
+layout: single
 title:  "Welcome to Jekyll!"
 date:   2024-07-30 21:04:40 +0700
 categories: jekyll update
@@ -26,4 +43,4 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+[jekyll-talk]: https://talk.jekyllrb.com/ -->

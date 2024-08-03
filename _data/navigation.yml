@@ -1,0 +1,10 @@
+main:
+  - title: "Projects"
+    url: /projects/
+  - title: "Blog"
+    url: /
+  - title: "About me"
+    url: /
+  - title: "Resources"
+    url: /
+ 
