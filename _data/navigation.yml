@@ -2,9 +2,9 @@ main:
   - title: "Projects"
     url: /projects/
   - title: "Blog"
-    url: /
+    url: /Blog/
   - title: "About me"
-    url: /
+    url: /about/
   - title: "Resources"
-    url: /
+    url: /Resources/
  

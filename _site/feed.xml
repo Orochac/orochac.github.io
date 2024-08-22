@@ -1,37 +1,178 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-03T20:31:15+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Oscar Rochanakij’s Site</title><subtitle>My homepage with links to my CV and Projects as well as a blog about travel and science.</subtitle><author><name>Oscar Rochanakij</name><email>oscarr12345678@gmail.com</email></author><entry><title type="html">Week three</title><link href="http://localhost:4000/Week-three/" rel="alternate" type="text/html" title="Week three" /><published>2024-08-02T00:00:00+07:00</published><updated>2024-08-02T00:00:00+07:00</updated><id>http://localhost:4000/Week-three</id><content type="html" xml:base="http://localhost:4000/Week-three/"><![CDATA[]]></content><author><name>Oscar Rochanakij</name><email>oscarr12345678@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Week two</title><link href="http://localhost:4000/Week-two/" rel="alternate" type="text/html" title="Week two" /><published>2024-07-26T00:00:00+07:00</published><updated>2024-07-26T00:00:00+07:00</updated><id>http://localhost:4000/Week-two</id><content type="html" xml:base="http://localhost:4000/Week-two/"><![CDATA[]]></content><author><name>Oscar Rochanakij</name><email>oscarr12345678@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Week one</title><link href="http://localhost:4000/jekyll/update/Week-one/" rel="alternate" type="text/html" title="Week one" /><published>2024-07-19T21:04:40+07:00</published><updated>2024-07-19T21:04:40+07:00</updated><id>http://localhost:4000/jekyll/update/Week-one</id><content type="html" xml:base="http://localhost:4000/jekyll/update/Week-one/"><![CDATA[]]></content><author><name>Oscar Rochanakij</name><email>oscarr12345678@gmail.com</email></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">My first post</title><link href="http://localhost:4000/jekyll/update/First-post/" rel="alternate" type="text/html" title="My first post" /><published>2024-07-12T21:04:40+07:00</published><updated>2024-07-12T21:04:40+07:00</updated><id>http://localhost:4000/jekyll/update/First-post</id><content type="html" xml:base="http://localhost:4000/jekyll/update/First-post/"><![CDATA[<p>This is my first post.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-22T17:33:37+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Oscar Rochanakij’s Site</title><subtitle>My homepage with links to my CV and Projects as well as a blog about travel and science.</subtitle><author><name>Oscar Rochanakij</name><email>oscarr12345678@gmail.com</email></author><entry><title type="html">Week five</title><link href="http://localhost:4000/blog-post/travel/sea-2024/weekly/Week-five/" rel="alternate" type="text/html" title="Week five" /><published>2024-08-16T21:04:40+07:00</published><updated>2024-08-16T21:04:40+07:00</updated><id>http://localhost:4000/blog-post/travel/sea-2024/weekly/Week-five</id><content type="html" xml:base="http://localhost:4000/blog-post/travel/sea-2024/weekly/Week-five/"><![CDATA[<p>Day 1:
+Gunung Kerinci
+Jakarta</p>
 
-<p>I would like to add in an image here:
-<img src="/assets/images/Trip_plan.png" alt="image-left" class="align-left" /></p>
+<p>Day 2:
+Jakarta</p>
 
-<p>Then some more text and then a fact.</p>
+<p>Day 3:
+Jakarta
+Hanoi</p>
 
-<p class="notice--info">Fun Fact this is a fun fact.</p>
-<!-- ---
-layout: single
-title:  "Welcome to Jekyll!"
-date:   2024-07-30 21:04:40 +0700
-categories: jekyll update
----
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+<p>Day 4:
+Hanoi</p>
 
-Jekyll requires blog post files to be named according to the following format:
+<p>Day 5:
+Hanoi</p>
 
-`YEAR-MONTH-DAY-title.MARKUP`
+<p>Day 6:
+Hanoi</p>
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+<p>Day 7:
+Hanoi</p>]]></content><author><name>Oscar Rochanakij</name><email>oscarr12345678@gmail.com</email></author><category term="blog-post" /><category term="travel" /><category term="SEA-2024" /><category term="Weekly" /><summary type="html"><![CDATA[Day 1: Gunung Kerinci Jakarta]]></summary></entry><entry><title type="html">Week four</title><link href="http://localhost:4000/blog-post/travel/sea-2024/weekly/Week-four/" rel="alternate" type="text/html" title="Week four" /><published>2024-08-09T21:04:40+07:00</published><updated>2024-08-09T21:04:40+07:00</updated><id>http://localhost:4000/blog-post/travel/sea-2024/weekly/Week-four</id><content type="html" xml:base="http://localhost:4000/blog-post/travel/sea-2024/weekly/Week-four/"><![CDATA[<p>Day 1:
+Pekanbaru</p>
 
-Jekyll also offers powerful support for code snippets:
+<p>Day 2:
+Pekanbaru
+Padang</p>
 
+<p>Day 3:
+Padang
+Sick</p>
 
+<p>Day 4:
+Padang</p>
+
+<p>Day 5:
+Padang
+Gunung Kerinci</p>
+
+<p>Day 6:
+Gunung Kerinci</p>
+
+<p>Day 7:
+Gunung Kerinci</p>]]></content><author><name>Oscar Rochanakij</name><email>oscarr12345678@gmail.com</email></author><category term="blog-post" /><category term="travel" /><category term="SEA-2024" /><category term="Weekly" /><summary type="html"><![CDATA[Day 1: Pekanbaru]]></summary></entry><entry><title type="html">Week three</title><link href="http://localhost:4000/blog-post/travel/sea-2024/weekly/Week-three/" rel="alternate" type="text/html" title="Week three" /><published>2024-08-02T21:04:40+07:00</published><updated>2024-08-02T21:04:40+07:00</updated><id>http://localhost:4000/blog-post/travel/sea-2024/weekly/Week-three</id><content type="html" xml:base="http://localhost:4000/blog-post/travel/sea-2024/weekly/Week-three/"><![CDATA[<p>Day 1:
+Pulau Nias</p>
+
+<p>Day 2:
+Pulau Nias</p>
+
+<p>Day 3:
+Pulau Nias</p>
+
+<p>Day 4:
+Pulau Nias</p>
+
+<p>Day 5:
+Pulau Nias</p>
+
+<p>Day 6:
+Pulau Nias</p>
+
+<p>Day 7:
+Sibolga</p>]]></content><author><name>Oscar Rochanakij</name><email>oscarr12345678@gmail.com</email></author><category term="blog-post" /><category term="travel" /><category term="SEA-2024" /><category term="Weekly" /><summary type="html"><![CDATA[Day 1: Pulau Nias]]></summary></entry><entry><title type="html">Week two</title><link href="http://localhost:4000/blog-post/travel/sea-2024/weekly/Week-two/" rel="alternate" type="text/html" title="Week two" /><published>2024-07-26T21:04:40+07:00</published><updated>2024-07-26T21:04:40+07:00</updated><id>http://localhost:4000/blog-post/travel/sea-2024/weekly/Week-two</id><content type="html" xml:base="http://localhost:4000/blog-post/travel/sea-2024/weekly/Week-two/"><![CDATA[<p>Day 1:
+Pulau Weh</p>
+
+<p>Day 2:
+Pulau Weh</p>
+
+<p>Day 3:
+Pulau Weh
+Banda Aceh</p>
+
+<p>Day 4:
+Banda Aceh</p>
+
+<p>Day 5:
+Medan</p>
+
+<p>Day 6:
+Medan</p>
+
+<p>Day 7:
+Medan
+Pulau Nias</p>]]></content><author><name>Oscar Rochanakij</name><email>oscarr12345678@gmail.com</email></author><category term="blog-post" /><category term="travel" /><category term="SEA-2024" /><category term="Weekly" /><summary type="html"><![CDATA[Day 1: Pulau Weh]]></summary></entry><entry><title type="html">Week one</title><link href="http://localhost:4000/blog-post/travel/sea-2024/weekly/Week-one/" rel="alternate" type="text/html" title="Week one" /><published>2024-07-19T21:04:40+07:00</published><updated>2024-07-19T21:04:40+07:00</updated><id>http://localhost:4000/blog-post/travel/sea-2024/weekly/Week-one</id><content type="html" xml:base="http://localhost:4000/blog-post/travel/sea-2024/weekly/Week-one/"><![CDATA[<p>Day 1:
+Singapore</p>
+
+<figure class="third ">
+  
+    
+      <a href="https://drive.google.com/file/d/18cwltujTS4Fz32_JVOkpexH8ActwU6QR/view?usp=drive_link" title="Marina Bay Sands">
+          <img src="https://drive.google.com/thumbnail?id=18cwltujTS4Fz32_JVOkpexH8ActwU6QR&amp;sz=w1000" alt="View of Marina Bay Sands from the Bay" />
+      </a>
+    
+  
+    
+      <a href="https://drive.google.com/file/d/108QFIhFW37Bsbzo67exTHbyJmU_UPPii/view?usp=drive_link" title="Marina Bay Sands from Level 33">
+          <img src="https://drive.google.com/thumbnail?id=108QFIhFW37Bsbzo67exTHbyJmU_UPPii&amp;sz=w1000" alt="View of Marina Bay Sands from Level 33" />
+      </a>
+    
+  
+    
+      <a href="https://drive.google.com/file/d/1W3CUKLUpfOCmv16yqm-YX_837UN5Oi_r/view?usp=drive_link" title="Level 33 View">
+          <img src="https://drive.google.com/thumbnail?id=1W3CUKLUpfOCmv16yqm-YX_837UN5Oi_r&amp;sz=w1000" alt="Level 33 View" />
+      </a>
+    
+  
+    
+      <a href="https://drive.google.com/file/d/15_VO0UZUYOsVIR2FoJiyslZ27khrtZnL/view?usp=drive_link" title="View from Hainan Restaurant">
+          <img src="https://drive.google.com/thumbnail?id=15_VO0UZUYOsVIR2FoJiyslZ27khrtZnL&amp;sz=w1000" alt="View from Hainan Restaurant" />
+      </a>
+    
+  
+  
+    <figcaption>Singapore photos from day 1
+</figcaption>
+  
+</figure>
+
+<!-- - Arrive at hotel Aloft Novena
+- Try to work out but thongs no good
+- Get Hainan Chicken at Boon Tong Kee Restaurant, <it>Balestier Rd, #399 401 & 403, Singapore 329801.</it>
+- Walk along the Bay at night and go up to enjoy a wheat beer in LeVel33, <it>8 Marina Blvd, #33 - 01 Tower 1, Singapore 018981</it>
+- Take the MRT home and rest for my first of many nights in Asia. -->
+
+<p>Day 2:
+Singapore
+&lt;!– - Gardens by the bay</p>
+<ul>
+  <li>Haw par villa</li>
+  <li>Chinatown –&gt;</li>
+</ul>
+
+<p>Day 3:
+Singapore
+&lt;!– - Botanical gardens</p>
+<ul>
+  <li>Amazing, went to spice garden, healing garden, aroma garden orchid garden with a bunch of orchid gardens in the orchid section, botany lab, bird photography, two rain forest walks.</li>
+  <li>National museum half closed</li>
+  <li>Chili Crab</li>
+  <li>Tiny mall, like what I thought big bus terminal no it’s legit the alley atthwback of a shitty mall</li>
+  <li>Link to Post about my Bus experience –&gt;</li>
+</ul>
+
+<p>Day 4:
+Malaysia</p>
+
+<p>Banda Aceh</p>
+
+<p>Day 5:
+Banda Aceh
+Pulau Weh</p>
+
+<p>Day 6:
+Pulau Weh</p>
+
+<p>Day 7:
+Pulau Weh</p>]]></content><author><name>Oscar Rochanakij</name><email>oscarr12345678@gmail.com</email></author><category term="blog-post" /><category term="travel" /><category term="SEA-2024" /><category term="Weekly" /><summary type="html"><![CDATA[Day 1: Singapore]]></summary></entry><entry><title type="html">My first post</title><link href="http://localhost:4000/blog-post/travel/sea-2024/First-post/" rel="alternate" type="text/html" title="My first post" /><published>2024-07-12T06:00:00+07:00</published><updated>2024-07-12T06:00:00+07:00</updated><id>http://localhost:4000/blog-post/travel/sea-2024/First-post</id><content type="html" xml:base="http://localhost:4000/blog-post/travel/sea-2024/First-post/"><![CDATA[<p>Welcome to the first post of my blog. I hope to use this space to post interesting and
+informative content on my travels, computer science and mathematics!</p>
+
+<p>After finishing my Master’s degree in June I decided to travel south-east Asia and Japan. This is a rough overview of my planned travels.
+<img src="/assets/images/Trip_plan.png" alt="image-left" class="align-left" />
+I fly in from Melbourne to Singapore then make my way from the northernmost point of Sumatra to Jakarta over the span of a month. I then spend 8 days in Vietnam before making my way back to Jakarta to explore Java and the lesser Sunda islands for a month. I will then make my way to Japan and spend a few weeks there before flying to Thailand. There I plan to stay for around two months including some trips to Cambodia and Laos. I will then Return to Melbourne in December.</p>
+
+<p class="notice--info">The entire trip will span roughly 5 months and will include 8 different countries visited.</p>
+
+<p>I hope to publish weekly updates on my travels as well as slowly adding CV and portfolio resources to the site.</p>
+
+<p>Stay curious,</p>
+
+<p>Oscar Rochanakij.</p>
+
+<!-- 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
   <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">end</span>
 <span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
 <span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
-
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/ -->]]></content><author><name>Oscar Rochanakij</name><email>oscarr12345678@gmail.com</email></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[This is my first post.]]></summary></entry></feed>
+ -->]]></content><author><name>Oscar Rochanakij</name><email>oscarr12345678@gmail.com</email></author><category term="blog-post" /><category term="travel" /><category term="SEA-2024" /><summary type="html"><![CDATA[Welcome to the first post of my blog. I hope to use this space to post interesting and informative content on my travels, computer science and mathematics!]]></summary></entry></feed>

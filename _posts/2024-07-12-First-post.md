@@ -1,46 +1,31 @@
 ---
 layout: single
 title:  "My first post"
-date:   2024-07-12 21:04:40 +0700
-categories: jekyll update
+date:   2024-07-12 10:00:00 +1100
+categories: blog-post travel SEA-2024
 author_profile: true
 ---
-This is my first post.
+Welcome to the first post of my blog. I hope to use this space to post interesting and
+informative content on my travels, computer science and mathematics! 
 
-I would like to add in an image here:
+After finishing my Master’s degree in June I decided to travel south-east Asia and Japan. This is a rough overview of my planned travels.
 ![image-left](/assets/images/Trip_plan.png){: .align-left}
+I fly in from Melbourne to Singapore then make my way from the northernmost point of Sumatra to Jakarta over the span of a month. I then spend 8 days in Vietnam before making my way back to Jakarta to explore Java and the lesser Sunda islands for a month. I will then make my way to Japan and spend a few weeks there before flying to Thailand. There I plan to stay for around two months including some trips to Cambodia and Laos. I will then Return to Melbourne in December. 
 
-Then some more text and then a fact.
-
-
-Fun Fact this is a fun fact.
+The entire trip will span roughly 5 months and will include 8 different countries visited.
 {: .notice--info}
-<!-- ---
-layout: single
-title:  "Welcome to Jekyll!"
-date:   2024-07-30 21:04:40 +0700
-categories: jekyll update
----
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-Jekyll requires blog post files to be named according to the following format:
+I hope to publish weekly updates on my travels as well as slowly adding CV and portfolio resources to the site. 
 
-`YEAR-MONTH-DAY-title.MARKUP`
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Stay curious,
 
-Jekyll also offers powerful support for code snippets:
+Oscar Rochanakij.
 
-{% highlight ruby %}
+<!-- {% highlight ruby %}
 def print_hi(name)
   puts "Hi, #{name}"
 end
 print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/ -->
+{% endhighlight %} -->
