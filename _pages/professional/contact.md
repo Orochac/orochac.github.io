@@ -17,7 +17,7 @@ I'm always interested in new opportunities, collaborations, and conversations. W
   <h3 style="margin-top: 0;">Primary Contact</h3>
   <p style="font-size: 1.2em;">
     <i class="fas fa-envelope"></i> 
-    <a href="mailto:oscarr12345678@gmail.com">oscarr12345678@gmail.com</a>
+    <a href="mailto:o.rochanakij@protonmail.com">o.rochanakij@protonmail.com</a>
   </p>
   <p><em>I typically respond within 24-48 hours</em></p>
 </div>
@@ -154,6 +154,6 @@ To help me respond more effectively, please include:
   <h3>Looking forward to hearing from you!</h3>
   <p style="font-size: 1.1em;">
     <i class="fas fa-envelope"></i> 
-    <a href="mailto:oscarr12345678@gmail.com">oscarr12345678@gmail.com</a>
+    <a href="mailto:o.rochanakij@protonmail.com">o.rochanakij@protonmail.com</a>
   </p>
 </div>

@@ -3,7 +3,7 @@
 
 # Basic Site Settings
 title: "Oscar Rochanakij | Mathematics, Computer Science & Travel"
-email: oscarr12345678@gmail.com
+email: o.rochanakij@protonmail.com
 description: >-
   Personal portfolio and blog of Oscar Rochanakij - showcasing work in mathematics, 
   computer science, academic research, and travel adventures across Asia.
@@ -46,7 +46,7 @@ author:
   avatar: "/assets/images/profile.jpg"
   bio: "Mathematics • Computer Science • Travel"
   location: "Melbourne, Australia"
-  email: "oscarr12345678@gmail.com"
+  email: "o.rochanakij@protonmail.com"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -60,7 +60,7 @@ footer:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:oscarr12345678@gmail.com"
+      url: "mailto:o.rochanakij@protonmail.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/orochac"

@@ -151,7 +151,7 @@ feature_row2:
 <div class="notice--primary" style="text-align: center;">
   <p>Interested in collaboration, opportunities, or just want to connect?</p>
   <p>
-    <a href="mailto:oscarr12345678@gmail.com" class="btn btn--info"><i class="fas fa-envelope"></i> Email Me</a>
+    <a href="mailto:o.rochanakij@protonmail.com" class="btn btn--info"><i class="fas fa-envelope"></i> Email Me</a>
     <a href="https://github.com/orochac" class="btn btn--info"><i class="fab fa-github"></i> GitHub</a>
     <a href="https://instagram.com/oscarrchkij" class="btn btn--info"><i class="fab fa-instagram"></i> Instagram</a>
   </p>

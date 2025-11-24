@@ -207,7 +207,7 @@ This project is open source and available under the MIT License.
 
 **Oscar Rochanakij**
 - GitHub: [@Orochac](https://github.com/Orochac)
-- Email: oscarr12345678@gmail.com
+- Email: o.rochanakij@protonmail.com
 - Instagram: [@oscarrchkij](https://instagram.com/oscarrchkij)
 
 ## 🙏 Acknowledgments

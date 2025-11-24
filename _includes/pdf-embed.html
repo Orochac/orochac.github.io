@@ -1,0 +1,289 @@
+{% comment %}
+  PDF Embed Include
+  
+  Usage:
+  {% include pdf-embed.html 
+     url="https://example.com/document.pdf"
+     title="Document Title"
+     height="600px"
+     type="direct|overleaf|gdrive|onedrive"
+  %}
+  
+  Parameters:
+  - url (required): URL to the PDF or document
+  - title (optional): Title for accessibility
+  - height (optional): Height of embed (default: 600px)
+  - type (optional): Type of embed (default: direct)
+    - direct: Direct PDF URL
+    - overleaf: Overleaf read-only link
+    - gdrive: Google Drive file ID or sharing link
+    - onedrive: OneDrive sharing link
+{% endcomment %}
+
+{% assign embed_height = include.height | default: "600px" %}
+{% assign embed_title = include.title | default: "PDF Document" %}
+{% assign embed_type = include.type | default: "direct" %}
+
+<div class="pdf-embed-container" style="margin: 2rem 0;">
+  {% if embed_type == "overleaf" %}
+    {%- comment -%} Overleaf embed - extract project ID if full URL provided {%- endcomment -%}
+    {% if include.url contains "overleaf.com" %}
+      {% assign project_id = include.url | split: "/read/" | last | split: "/" | first %}
+      <iframe 
+        src="https://www.overleaf.com/read/{{ project_id }}"
+        width="100%" 
+        height="{{ embed_height }}"
+        frameborder="0"
+        title="{{ embed_title }}"
+        class="pdf-embed-frame"
+        loading="lazy">
+      </iframe>
+    {% else %}
+      <iframe 
+        src="https://www.overleaf.com/read/{{ include.url }}"
+        width="100%" 
+        height="{{ embed_height }}"
+        frameborder="0"
+        title="{{ embed_title }}"
+        class="pdf-embed-frame"
+        loading="lazy">
+      </iframe>
+    {% endif %}
+    
+  {% elsif embed_type == "gdrive" %}
+    {%- comment -%} Google Drive embed - extract file ID if full URL provided {%- endcomment -%}
+    {% if include.url contains "drive.google.com" %}
+      {% assign file_id = include.url | split: "/d/" | last | split: "/" | first %}
+      {% unless file_id contains "/" %}
+        <iframe 
+          src="https://drive.google.com/file/d/{{ file_id }}/preview"
+          width="100%" 
+          height="{{ embed_height }}"
+          frameborder="0"
+          title="{{ embed_title }}"
+          class="pdf-embed-frame"
+          loading="lazy"
+          allow="autoplay">
+        </iframe>
+      {% else %}
+        <p class="pdf-embed-error">Invalid Google Drive URL format</p>
+      {% endunless %}
+    {% else %}
+      <iframe 
+        src="https://drive.google.com/file/d/{{ include.url }}/preview"
+        width="100%" 
+        height="{{ embed_height }}"
+        frameborder="0"
+        title="{{ embed_title }}"
+        class="pdf-embed-frame"
+        loading="lazy"
+        allow="autoplay">
+      </iframe>
+    {% endif %}
+    
+  {% elsif embed_type == "onedrive" %}
+    {%- comment -%} OneDrive embed - use provided embed URL {%- endcomment -%}
+    <iframe 
+      src="{{ include.url }}"
+      width="100%" 
+      height="{{ embed_height }}"
+      frameborder="0"
+      title="{{ embed_title }}"
+      class="pdf-embed-frame"
+      loading="lazy">
+    </iframe>
+    
+  {% else %}
+    {%- comment -%} Direct PDF embed using object tag with fallback {%- endcomment -%}
+    <object 
+      data="{{ include.url }}" 
+      type="application/pdf" 
+      width="100%" 
+      height="{{ embed_height }}"
+      class="pdf-embed-object">
+      <div class="pdf-embed-fallback">
+        <p>Your browser doesn't support embedded PDFs.</p>
+        <p>
+          <a href="{{ include.url }}" 
+             class="btn btn--primary" 
+             download="{{ embed_title }}.pdf"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+          <a href="{{ include.url }}" 
+             class="btn btn--info" 
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i> Open in New Tab
+          </a>
+        </p>
+      </div>
+    </object>
+  {% endif %}
+  
+  {% if include.caption %}
+    <p class="pdf-embed-caption">{{ include.caption }}</p>
+  {% endif %}
+  
+  <div class="pdf-embed-actions">
+    <a href="{{ include.url }}" 
+       class="pdf-action-link" 
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Open in new tab">
+      <i class="fas fa-external-link-alt"></i> Open in New Tab
+    </a>
+    {% if embed_type == "direct" %}
+      <a href="{{ include.url }}" 
+         class="pdf-action-link" 
+         download="{{ embed_title }}.pdf"
+         title="Download PDF">
+        <i class="fas fa-download"></i> Download
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+.pdf-embed-container {
+  position: relative;
+  background: var(--background-color, #fff);
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-embed-frame,
+.pdf-embed-object {
+  display: block;
+  border: none;
+  border-radius: 8px 8px 0 0;
+}
+
+.pdf-embed-fallback {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--background-color, #f8f9fa);
+}
+
+.pdf-embed-fallback p {
+  margin-bottom: 1.5rem;
+  color: var(--text-color, #333);
+}
+
+.pdf-embed-fallback .btn {
+  margin: 0 0.5rem;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.pdf-embed-fallback .btn--primary {
+  background: var(--primary-color, #007bff);
+  color: white;
+}
+
+.pdf-embed-fallback .btn--info {
+  background: var(--info-color, #17a2b8);
+  color: white;
+}
+
+.pdf-embed-fallback .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pdf-embed-caption {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--muted-text-color, #666);
+  font-style: italic;
+  text-align: center;
+  border-top: 1px solid var(--border-color, #e0e0e0);
+  margin: 0;
+}
+
+.pdf-embed-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: var(--background-color-alt, #f8f9fa);
+  border-top: 1px solid var(--border-color, #e0e0e0);
+}
+
+.pdf-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--link-color, #007bff);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.pdf-action-link:hover {
+  color: var(--link-hover-color, #0056b3);
+  text-decoration: underline;
+}
+
+.pdf-action-link i {
+  font-size: 0.85rem;
+}
+
+.pdf-embed-error {
+  padding: 2rem;
+  text-align: center;
+  color: var(--error-color, #dc3545);
+  background: var(--error-background, #f8d7da);
+  border-radius: 4px;
+  margin: 1rem;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .pdf-embed-container {
+    --background-color: #1a1a1a;
+    --background-color-alt: #2a2a2a;
+    --border-color: #404040;
+    --text-color: #e0e0e0;
+    --muted-text-color: #a0a0a0;
+    --link-color: #4da3ff;
+    --link-hover-color: #80b3ff;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .pdf-embed-container {
+    margin: 1rem 0;
+  }
+  
+  .pdf-embed-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .pdf-action-link {
+    justify-content: center;
+  }
+  
+  .pdf-embed-fallback .btn {
+    display: block;
+    margin: 0.5rem auto;
+    width: 80%;
+    max-width: 300px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .pdf-embed-actions {
+    display: none;
+  }
+}
+</style>
