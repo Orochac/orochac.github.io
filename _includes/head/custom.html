@@ -1,0 +1,159 @@
+<!-- Custom head content for enhanced performance and SEO -->
+
+<!-- Preconnect to external domains for faster loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://res.cloudinary.com">
+
+<!-- DNS prefetch for additional performance -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+<!-- Enhanced SEO Meta Tags -->
+<meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+<meta name="keywords" content="{{ page.keywords | join: ', ' | default: 'Oscar Rochanakij, Mathematics, Computer Science, Portfolio, Travel Blog, Melbourne' }}">
+<meta name="author" content="{{ site.author.name }}">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{{ page.og_type | default: 'website' }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+<meta property="og:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+<meta property="og:image" content="{{ page.image | default: site.og_image | absolute_url }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="{{ site.locale | default: 'en_AU' }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ page.url | absolute_url }}">
+<meta name="twitter:title" content="{{ page.title | default: site.title | escape }}">
+<meta name="twitter:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+<meta name="twitter:image" content="{{ page.image | default: site.og_image | absolute_url }}">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+
+<!-- Alternate languages (if applicable) -->
+<link rel="alternate" hreflang="en" href="{{ page.url | absolute_url }}">
+
+<!-- Theme color for mobile browsers -->
+<meta name="theme-color" content="#0066cc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#4da6ff" media="(prefers-color-scheme: dark)">
+
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon-16x16.png' | relative_url }}">
+
+<!-- Manifest for PWA -->
+<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+
+<!-- Structured Data - JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.author.name }}",
+  "url": "{{ site.url }}",
+  "image": "{{ site.author.avatar | absolute_url }}",
+  "sameAs": [
+    "https://github.com/{{ site.github_username }}",
+    "https://instagram.com/oscarrchkij"
+  ],
+  "jobTitle": "IT Lead",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Partners in Planning"
+  },
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "University of Melbourne",
+      "sameAs": "https://www.unimelb.edu.au/"
+    }
+  ],
+  "knowsAbout": [
+    "Mathematics",
+    "Computer Science",
+    "Software Development",
+    "Automation",
+    "Pure Mathematics",
+    "Statistics"
+  ],
+  "description": "{{ site.description }}"
+}
+</script>
+
+<!-- Performance: Preload critical assets -->
+<link rel="preload" href="{{ '/assets/css/main.css' | relative_url }}" as="style">
+<link rel="preload" href="{{ '/assets/js/custom/dark-mode.js' | relative_url }}" as="script">
+
+<!-- Dark mode script - load immediately to prevent flash -->
+<script src="{{ '/assets/js/custom/dark-mode.js' | relative_url }}"></script>
+
+<!-- Lazy loading script - defer for better performance -->
+<script defer src="{{ '/assets/js/custom/lazy-load.js' | relative_url }}"></script>
+
+<!-- Font Awesome - using CDN for latest icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<!-- Viewport meta for responsive design -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+
+<!-- Performance hints -->
+<meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- Security headers -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+
+<!-- Referrer policy -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- Skip to content link for accessibility -->
+<style>
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0066cc;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 100;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+</style>
+
+<!-- Google Analytics (if configured) -->
+{% if site.analytics.provider == "google-gtag" and site.analytics.google.tracking_id %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google.tracking_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.analytics.google.tracking_id }}', {
+    'anonymize_ip': {{ site.analytics.google.anonymize_ip | default: false }}
+  });
+</script>
+{% endif %}
+
+<!-- Performance monitoring -->
+<script>
+  // Log page load performance
+  window.addEventListener('load', function() {
+    if ('performance' in window) {
+      const perfData = window.performance.timing;
+      const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+      console.log('Page load time:', pageLoadTime + 'ms');
+    }
+  });
+</script>

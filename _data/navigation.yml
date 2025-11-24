@@ -1,10 +1,61 @@
+# Main Navigation - Enhanced with dropdown menus
+# Optimized for mobile and desktop responsiveness
+
 main:
-  - title: "Projects"
-    url: /projects/
+  - title: "Home"
+    url: /
+    
+  - title: "Professional"
+    url: /professional/
+    children:
+      - title: "Resume/CV"
+        url: /professional/resume/
+      - title: "Skills"
+        url: /professional/skills/
+      - title: "Contact"
+        url: /professional/contact/
+        
+  - title: "Portfolio"
+    url: /portfolio/
+    children:
+      - title: "All Projects"
+        url: /portfolio/
+      - title: "Industry Work"
+        url: /portfolio/industry/
+        
+  - title: "Academic"
+    url: /academic/
+    children:
+      - title: "Research"
+        url: /academic/research/
+      - title: "University Projects"
+        url: /academic/university/
+      - title: "Independent Study"
+        url: /academic/independent/
+      - title: "Teaching"
+        url: /academic/teaching/
+        
+  - title: "Travel"
+    url: /travel/
+    children:
+      - title: "Travel Map"
+        url: /travel/map/
+      - title: "Photo Galleries"
+        url: /travel/gallery/
+      - title: "Trip Stories"
+        url: /travel/trips/
+        
   - title: "Blog"
     url: /Blog/
-  - title: "About me"
+    children:
+      - title: "All Posts"
+        url: /Blog/
+      - title: "Technical"
+        url: /blog/technical/
+      - title: "Travel"
+        url: /blog/travel/
+        
+  - title: "About"
     url: /about/
-  - title: "Resources"
-    url: /Resources/
- 
+
+# Made with Bob

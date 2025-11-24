@@ -1,0 +1,380 @@
+/* Responsive Styles - Mobile-first approach for optimal performance */
+
+/* Base mobile styles (< 480px) */
+body {
+  font-size: $font-size-base;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container responsive padding */
+.page__content,
+.archive,
+.sidebar {
+  padding: $spacing-md;
+  
+  @media (min-width: $breakpoint-sm) {
+    padding: $spacing-lg;
+  }
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-xl;
+  }
+}
+
+/* Responsive typography */
+h1 {
+  font-size: 2rem;
+  margin-bottom: $spacing-md;
+  
+  @media (min-width: $breakpoint-sm) {
+    font-size: 2.25rem;
+  }
+  
+  @media (min-width: $breakpoint-md) {
+    font-size: $h1-size;
+  }
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: $spacing-md;
+  
+  @media (min-width: $breakpoint-sm) {
+    font-size: 1.875rem;
+  }
+  
+  @media (min-width: $breakpoint-md) {
+    font-size: $h2-size;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  
+  @media (min-width: $breakpoint-md) {
+    font-size: $h3-size;
+  }
+}
+
+h4 {
+  font-size: 1.25rem;
+  
+  @media (min-width: $breakpoint-md) {
+    font-size: $h4-size;
+  }
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive tables */
+table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+  
+  @media (min-width: $breakpoint-md) {
+    display: table;
+  }
+}
+
+/* Responsive navigation */
+.greedy-nav {
+  .visible-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+    @media (max-width: $breakpoint-sm) {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  
+  .hidden-links {
+    @media (max-width: $breakpoint-sm) {
+      position: static;
+      width: 100%;
+    }
+  }
+}
+
+/* Responsive grid layouts */
+.grid__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+  
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Feature rows responsive */
+.feature__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+  
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature__item {
+  text-align: center;
+  
+  .archive__item-teaser {
+    margin-bottom: $spacing-md;
+    
+    i {
+      color: var(--primary-color);
+    }
+  }
+}
+
+/* Responsive sidebar */
+.sidebar {
+  @media (max-width: $breakpoint-md) {
+    width: 100%;
+    margin-bottom: $spacing-xl;
+  }
+  
+  @media (min-width: $breakpoint-md) {
+    width: $sidebar-width;
+    position: sticky;
+    top: 2rem;
+  }
+}
+
+/* Responsive buttons */
+.btn {
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-base;
+  
+  @media (max-width: $breakpoint-sm) {
+    width: 100%;
+    margin-bottom: $spacing-sm;
+  }
+  
+  @media (min-width: $breakpoint-sm) {
+    display: inline-block;
+    width: auto;
+    margin-right: $spacing-sm;
+  }
+}
+
+/* Responsive hero/splash */
+.page__hero {
+  padding: $spacing-xl $spacing-md;
+  
+  @media (min-width: $breakpoint-sm) {
+    padding: $spacing-2xl $spacing-lg;
+  }
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-3xl $spacing-xl;
+  }
+}
+
+.page__hero-caption {
+  font-size: $font-size-sm;
+  
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-base;
+  }
+}
+
+/* Responsive code blocks */
+pre {
+  font-size: $font-size-sm;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-base;
+  }
+}
+
+/* Responsive notices */
+.notice {
+  padding: $spacing-md;
+  margin-bottom: $spacing-lg;
+  
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-lg;
+  }
+}
+
+/* Responsive archive items */
+.archive__item {
+  margin-bottom: $spacing-lg;
+  
+  .archive__item-title {
+    font-size: $font-size-lg;
+    
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-size-xl;
+    }
+  }
+  
+  .archive__item-excerpt {
+    font-size: $font-size-sm;
+    
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-size-base;
+    }
+  }
+}
+
+/* Touch-friendly tap targets */
+@media (max-width: $breakpoint-sm) {
+  a, button, .btn {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: $breakpoint-sm) and (orientation: landscape) {
+  .page__hero {
+    padding: $spacing-lg $spacing-md;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Tablet optimization */
+@media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+  .page__content {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* Large desktop optimization */
+@media (min-width: $breakpoint-xl) {
+  .page__content {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+  
+  .grid__wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Print optimization */
+@media print {
+  .sidebar,
+  .page__footer,
+  .dark-mode-toggle,
+  .btn {
+    display: none !important;
+  }
+  
+  .page__content {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .btn {
+    border: 2px solid currentColor;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* Flexible images in content */
+.page__content img {
+  margin: $spacing-lg auto;
+  border-radius: $border-radius-md;
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive video embeds */
+.responsive-video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  
+  iframe, object, embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Skip to content link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: var(--bg-primary);
+  padding: $spacing-sm $spacing-md;
+  text-decoration: none;
+  z-index: $z-tooltip;
+  
+  &:focus {
+    top: 0;
+  }
+}
+
+// Made with Bob

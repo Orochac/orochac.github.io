@@ -1,9 +1,342 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
-search: false
 ---
 
 @charset "utf-8";
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
+/* Import Minimal Mistakes theme */
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+/* Import custom variables first */
+@import "custom/variables";
+
+/* Import custom styles */
+@import "custom/dark-mode";
+@import "custom/responsive";
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+/* GPU acceleration for smooth animations */
+.page__hero,
+.archive__item,
+.btn,
+.dark-mode-toggle {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimize font loading */
+body {
+  font-display: swap;
+}
+
+/* Lazy loading images */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Additional responsive enhancements */
+.page {
+  @media (min-width: $breakpoint-md) {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: $spacing-xl;
+  }
+}
+
+/* Enhanced focus states for accessibility */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Improved link styles */
+.page__content a {
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  
+  &:hover {
+    text-decoration-thickness: 3px;
+  }
+}
+
+/* Better code block styling */
+.highlight {
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  margin: $spacing-lg 0;
+}
+
+pre {
+  border-radius: $border-radius-md;
+  padding: $spacing-md;
+}
+
+/* Enhanced notice boxes */
+.notice {
+  border-radius: $border-radius-md;
+  border-left: 4px solid var(--primary-color);
+  
+  &--primary {
+    border-left-color: var(--primary-color);
+  }
+  
+  &--info {
+    border-left-color: var(--accent-info);
+  }
+  
+  &--success {
+    border-left-color: var(--accent-success);
+  }
+  
+  &--warning {
+    border-left-color: var(--accent-warning);
+  }
+  
+  &--danger {
+    border-left-color: var(--accent-danger);
+  }
+}
+
+/* Improved button styles */
+.btn {
+  border-radius: $border-radius-md;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-base);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced archive item cards */
+.archive__item {
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  transition: all var(--transition-base);
+  border: 1px solid var(--border-color);
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .archive__item-teaser {
+    overflow: hidden;
+    
+    img {
+      transition: transform var(--transition-slow);
+    }
+    
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* Improved masthead */
+.masthead {
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  backdrop-filter: blur(10px);
+  
+  @supports (backdrop-filter: blur(10px)) {
+    background-color: rgba(var(--bg-secondary), 0.9);
+  }
+}
+
+/* Enhanced footer */
+.page__footer {
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  margin-top: $spacing-3xl;
+}
+
+/* Loading animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page__content > * {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Skeleton loading for images */
+img[loading="lazy"]:not(.loaded) {
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary) 25%,
+    var(--bg-secondary) 50%,
+    var(--bg-tertiary) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Improved table responsiveness */
+.page__content table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: $border-radius-md;
+  
+  @media (min-width: $breakpoint-md) {
+    display: table;
+  }
+}
+
+/* Enhanced blockquotes */
+blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding-left: $spacing-lg;
+  margin: $spacing-lg 0;
+  font-style: italic;
+  background-color: var(--bg-tertiary);
+  padding: $spacing-md $spacing-lg;
+  border-radius: $border-radius-md;
+}
+
+/* Better horizontal rules */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border-color),
+    transparent
+  );
+  margin: $spacing-xl 0;
+}
+
+/* Improved pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-sm;
+  margin: $spacing-xl 0;
+  
+  a, span {
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-md;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-base);
+    
+    &:hover {
+      background-color: var(--primary-color);
+      color: var(--bg-primary);
+      border-color: var(--primary-color);
+    }
+  }
+  
+  .current {
+    background-color: var(--primary-color);
+    color: var(--bg-primary);
+    border-color: var(--primary-color);
+  }
+}
+
+/* Cross-browser compatibility fixes */
+/* Safari-specific fixes */
+@supports (-webkit-appearance: none) {
+  input[type="search"] {
+    -webkit-appearance: none;
+  }
+}
+
+/* Firefox-specific fixes */
+@-moz-document url-prefix() {
+  .page__content {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--bg-tertiary);
+  }
+}
+
+/* Edge-specific fixes */
+@supports (-ms-ime-align: auto) {
+  .grid__wrapper {
+    display: -ms-grid;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: $border-radius-md;
+  
+  &:hover {
+    background: var(--primary-dark);
+  }
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--primary-color);
+  color: var(--bg-primary);
+}
+
+::-moz-selection {
+  background-color: var(--primary-color);
+  color: var(--bg-primary);
+}
+
+// Made with Bob

@@ -1,0 +1,221 @@
+/* Dark Mode Styles - Smooth transitions and accessibility */
+
+/* Base theme transition */
+* {
+  transition: background-color var(--transition-base),
+              color var(--transition-base),
+              border-color var(--transition-base);
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Apply theme colors */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  
+  &:hover {
+    color: var(--primary-dark);
+  }
+}
+
+/* Cards and containers */
+.archive__item,
+.page__content,
+.sidebar,
+.notice {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+/* Navigation */
+.greedy-nav {
+  background-color: var(--bg-secondary);
+  
+  a {
+    color: var(--text-primary);
+    
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}
+
+/* Buttons */
+.btn {
+  background-color: var(--primary-color);
+  color: var(--bg-primary);
+  border-color: var(--primary-color);
+  
+  &:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+  }
+}
+
+/* Code blocks */
+pre, code {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* Tables */
+table {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  
+  th, td {
+    border-color: var(--border-color);
+  }
+  
+  thead {
+    background-color: var(--bg-tertiary);
+  }
+}
+
+/* Forms */
+input, textarea, select {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  
+  &:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color), 0.25);
+  }
+}
+
+/* Blockquotes */
+blockquote {
+  border-left-color: var(--primary-color);
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+/* Horizontal rules */
+hr {
+  border-color: var(--border-color);
+}
+
+/* Images - maintain visibility in dark mode */
+[data-theme="dark"] img {
+  opacity: 0.9;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+/* Shadows */
+.shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: $z-fixed;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: var(--bg-primary);
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all var(--transition-base);
+  
+  &:hover {
+    transform: scale(1.1);
+    background-color: var(--primary-dark);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+  
+  /* Mobile positioning */
+  @media (max-width: $breakpoint-sm) {
+    bottom: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+  }
+}
+
+/* Icon rotation animation */
+.dark-mode-toggle i {
+  transition: transform var(--transition-base);
+}
+
+[data-theme="dark"] .dark-mode-toggle i {
+  transform: rotate(180deg);
+}
+
+/* Accessibility - Focus indicators */
+*:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #0052cc;
+    --text-primary: #000000;
+    --bg-primary: #ffffff;
+  }
+  
+  [data-theme="dark"] {
+    --primary-color: #66b3ff;
+    --text-primary: #ffffff;
+    --bg-primary: #000000;
+  }
+}
+
+/* Print styles - always light mode */
+@media print {
+  * {
+    background-color: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  .dark-mode-toggle {
+    display: none !important;
+  }
+}
+
+// Made with Bob
