@@ -95,11 +95,10 @@ exclude:
   - package.json
   - package-lock.json
   - Rakefile
-  - README
+  - README.md
   - tmp
   - /docs
   - /test
-  - "*.md"
   - docs
 keep_files:
   - .git

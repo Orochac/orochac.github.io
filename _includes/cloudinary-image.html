@@ -1,0 +1,105 @@
+{% comment %}
+  Cloudinary Image Include
+  
+  Usage:
+  {% include cloudinary-image.html 
+     id="travel/sumatra/lake-toba-1"
+     alt="Lake Toba at sunset"
+     caption="Beautiful sunset over Lake Toba"
+     width="1000"
+     class="custom-class"
+  %}
+  
+  Parameters:
+  - id (required): Cloudinary image path (without extension)
+  - alt (required): Alt text for accessibility
+  - caption (optional): Image caption
+  - width (optional): Max width in pixels (default: 800)
+  - class (optional): Additional CSS classes
+{% endcomment %}
+
+{% assign cloud_name = site.cloudinary.cloud_name | default: "demo" %}
+{% assign image_id = include.id %}
+{% assign width = include.width | default: 800 %}
+{% assign alt = include.alt | default: "" %}
+{% assign caption = include.caption %}
+{% assign custom_class = include.class | default: "" %}
+
+<figure class="cloudinary-image {{ custom_class }}">
+  <img 
+    src="https://res.cloudinary.com/{{ cloud_name }}/image/upload/c_scale,w_{{ width }},f_auto,q_auto/{{ image_id }}.jpg"
+    srcset="
+      https://res.cloudinary.com/{{ cloud_name }}/image/upload/c_scale,w_400,f_auto,q_auto/{{ image_id }}.jpg 400w,
+      https://res.cloudinary.com/{{ cloud_name }}/image/upload/c_scale,w_800,f_auto,q_auto/{{ image_id }}.jpg 800w,
+      https://res.cloudinary.com/{{ cloud_name }}/image/upload/c_scale,w_1200,f_auto,q_auto/{{ image_id }}.jpg 1200w,
+      https://res.cloudinary.com/{{ cloud_name }}/image/upload/c_scale,w_1600,f_auto,q_auto/{{ image_id }}.jpg 1600w"
+    sizes="(max-width: 768px) 100vw, {{ width }}px"
+    alt="{{ alt }}"
+    loading="lazy"
+    class="cloudinary-img">
+  {% if caption %}
+  <figcaption class="cloudinary-caption">{{ caption }}</figcaption>
+  {% endif %}
+</figure>
+
+<style>
+.cloudinary-image {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.cloudinary-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cloudinary-img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.cloudinary-caption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted-text-color, #666);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .cloudinary-caption {
+    color: var(--muted-text-color, #a0a0a0);
+  }
+  
+  .cloudinary-img {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cloudinary-img:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cloudinary-image {
+    margin: 1.5rem 0;
+  }
+  
+  .cloudinary-img {
+    border-radius: 4px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .cloudinary-img {
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+}
+</style>

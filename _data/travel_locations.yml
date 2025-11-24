@@ -1,0 +1,74 @@
+# Travel Locations Data
+# Add your travel destinations here with coordinates, posts, and photos
+
+- name: "Singapore"
+  coords: [1.3521, 103.8198]
+  country: "Singapore"
+  description: "Gateway to Southeast Asia - modern city-state with incredible food and culture"
+  duration: "1 week"
+  dates: "July 2024"
+  highlights:
+    - "Marina Bay Sands"
+    - "Gardens by the Bay"
+    - "Hawker Centers"
+    - "Sentosa Island"
+  posts:
+    - title: "First Post - Arrival in Singapore"
+      url: "/blog-post/travel/sea-2024/First-post/"
+  photos:
+    - id: "singapore/marina-bay"
+      caption: "Marina Bay at night"
+    - id: "singapore/gardens"
+      caption: "Gardens by the Bay"
+  google_photos_album: "https://photos.app.goo.gl/your-album-link"
+
+- name: "Sumatra, Indonesia"
+  coords: [0.5897, 101.3431]
+  country: "Indonesia"
+  description: "8 weeks exploring the wild heart of Indonesia - from volcanic lakes to rainforest treks"
+  duration: "8 weeks"
+  dates: "July - September 2024"
+  highlights:
+    - "Lake Toba - World's largest volcanic lake"
+    - "Bukit Lawang - Orangutan trekking"
+    - "Mount Sinabung - Active volcano"
+    - "Traditional Batak villages"
+  posts:
+    - title: "Week One in Sumatra"
+      url: "/blog-post/travel/sea-2024/weekly/Week-one/"
+    - title: "Week Two in Sumatra"
+      url: "/blog-post/travel/sea-2024/weekly/Week-two/"
+    - title: "Week Three in Sumatra"
+      url: "/blog-post/travel/sea-2024/weekly/Week-three/"
+    - title: "Week Four in Sumatra"
+      url: "/blog-post/travel/sea-2024/weekly/Week-four/"
+    - title: "Week Five in Sumatra"
+      url: "/blog-post/travel/sea-2024/weekly/Week-five/"
+  photos:
+    - id: "sumatra/lake-toba-1"
+      caption: "Sunset over Lake Toba"
+    - id: "sumatra/orangutan-1"
+      caption: "Wild orangutan in Bukit Lawang"
+    - id: "sumatra/village-1"
+      caption: "Traditional Batak house"
+  google_photos_album: "https://photos.app.goo.gl/your-sumatra-album"
+
+# Template for adding new locations:
+# - name: "City, Country"
+#   coords: [latitude, longitude]
+#   country: "Country Name"
+#   description: "Brief description"
+#   duration: "X weeks/days"
+#   dates: "Month Year"
+#   highlights:
+#     - "Highlight 1"
+#     - "Highlight 2"
+#   posts:
+#     - title: "Post Title"
+#       url: "/blog-post/path/"
+#   photos:
+#     - id: "folder/image-name"
+#       caption: "Photo caption"
+#   google_photos_album: "https://photos.app.goo.gl/album-link"
+
+# Made with Bob
