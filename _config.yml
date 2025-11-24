@@ -100,11 +100,7 @@ exclude:
   - /docs
   - /test
   - "*.md"
-  - ARCHITECTURE_PLAN.md
-  - IMPLEMENTATION_ROADMAP.md
-  - QUICK_START_GUIDE.md
-  - ACADEMIC_CONTENT_GUIDE.md
-  - COMMUNICATION_SHOWCASE_GUIDE.md
+  - docs
 keep_files:
   - .git
   - .svn

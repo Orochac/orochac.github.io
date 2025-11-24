@@ -2,25 +2,26 @@
 
 A modern, responsive, and performant personal portfolio and blog built with Jekyll and GitHub Pages.
 
+🌐 **Live Site**: [orochac.github.io](https://orochac.github.io)
+
 ## 🌟 Features
 
-- **Extremely Responsive** - Mobile-first design with 5 breakpoints
+- **Extremely Responsive** - Mobile-first design optimized for all devices
 - **Dark Mode** - System preference detection with manual toggle
-- **Lightweight** - Optimized for fast loading (< 3 seconds)
+- **Lightning Fast** - Optimized for < 3 second load times
 - **SEO Optimized** - Meta tags, Open Graph, structured data
 - **Accessible** - WCAG AA compliant
 - **Cross-Browser** - Works on all modern browsers
-- **Lazy Loading** - Images load as needed for better performance
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Ruby 2.7 or higher
+- Ruby 2.6+ (Ruby 3.0+ recommended)
 - Bundler
 - Git
 
-### Installation
+### Local Development
 
 ```bash
 # Clone the repository
@@ -36,65 +37,63 @@ bundle exec jekyll serve
 # Visit http://localhost:4000
 ```
 
-### Development
+### First Time Setup
 
-```bash
-# Serve with drafts
-bundle exec jekyll serve --drafts
+If you encounter Ruby version issues, see [docs/SETUP_GUIDE.md](docs/SETUP_GUIDE.md)
 
-# Serve with future posts
-bundle exec jekyll serve --future
-
-# Clean build
-bundle exec jekyll clean && bundle exec jekyll build
-```
-
-## 📁 Structure
+## 📁 Project Structure
 
 ```
 orochac.github.io/
-├── _config.yml              # Site configuration
-├── index.md                 # Homepage
-├── _data/
-│   └── navigation.yml       # Navigation menu
-├── _pages/                  # Static pages
-│   ├── professional/        # Resume, skills, contact
-│   ├── portfolio/           # Projects
-│   ├── academic/            # Research, university work
-│   ├── travel/              # Travel content
-│   └── blog/                # Blog indexes
-├── _posts/                  # Blog posts
-├── _projects/               # Project collection
-├── _research/               # Research collection
-├── _travel_destinations/    # Travel collection
-├── _sass/custom/            # Custom styles
+├── _config.yml           # Site configuration
+├── index.md              # Homepage
+├── README.md             # This file
+│
+├── _data/                # Data files
+│   └── navigation.yml    # Navigation menu
+│
+├── _pages/               # Static pages
+│   ├── professional/     # Resume, skills, contact
+│   ├── portfolio/        # Projects
+│   ├── academic/         # Research, university work
+│   ├── travel/           # Travel content
+│   └── blog/             # Blog indexes
+│
+├── _posts/               # Blog posts
+│   ├── technical/        # Technical posts
+│   └── travel/           # Travel posts
+│
+├── Collections/          # Content collections
+│   ├── _projects/        # Project portfolio
+│   ├── _research/        # Academic research
+│   ├── _travel_destinations/  # Travel content
+│   └── ...               # Other collections
+│
+├── _sass/custom/         # Custom styles
+│   ├── _variables.scss   # Theme variables
+│   ├── _dark-mode.scss   # Dark mode styles
+│   └── _responsive.scss  # Responsive design
+│
 ├── assets/
-│   ├── css/                 # Stylesheets
-│   ├── js/custom/           # Custom JavaScript
-│   ├── images/              # Images
-│   └── files/               # Downloadable files
-└── _includes/               # Reusable components
+│   ├── css/              # Stylesheets
+│   ├── js/custom/        # Custom JavaScript
+│   ├── images/           # Images
+│   └── files/            # Downloadable files
+│
+├── _includes/            # Reusable components
+│   └── head/custom.html  # Custom head content
+│
+└── docs/                 # Documentation
+    ├── SETUP_GUIDE.md
+    ├── ARCHITECTURE_PLAN.md
+    └── ...
 ```
-
-## 🎨 Customization
-
-### Colors & Theme
-
-Edit `_sass/custom/_variables.scss` to customize colors, fonts, and spacing.
-
-### Navigation
-
-Edit `_data/navigation.yml` to modify the navigation menu.
-
-### Homepage
-
-Edit `index.md` to customize the homepage content and featured sections.
 
 ## 📝 Adding Content
 
 ### Blog Posts
 
-Create a new file in `_posts/` with the format `YYYY-MM-DD-title.md`:
+Create a file in `_posts/` with format `YYYY-MM-DD-title.md`:
 
 ```markdown
 ---
@@ -110,13 +109,12 @@ Your content here...
 
 ### Projects
 
-Create a new file in `_projects/`:
+Create a file in `_projects/`:
 
 ```markdown
 ---
 layout: single
 title: "Project Name"
-date: 2024-01-01
 technologies: [Python, Django]
 github: https://github.com/username/repo
 ---
@@ -124,76 +122,82 @@ github: https://github.com/username/repo
 Project description...
 ```
 
-### Travel Destinations
+## 🎨 Customization
 
-Create a new file in `_travel_destinations/`:
+### Colors & Theme
 
-```markdown
----
-layout: single
-title: "Destination Name"
-date: 2024-01-01
-location: "City, Country"
----
+Edit `_sass/custom/_variables.scss` to customize:
+- Color palette
+- Typography
+- Spacing
+- Breakpoints
 
-Travel story...
-```
+### Navigation
+
+Edit `_data/navigation.yml` to modify the menu structure.
+
+### Homepage
+
+Edit `index.md` to customize featured content and sections.
 
 ## 🚢 Deployment
 
-### GitHub Pages (Automatic)
+### Automatic (GitHub Pages)
 
 1. Push to the `main` branch
-2. GitHub Pages will automatically build and deploy
+2. GitHub Pages automatically builds and deploys
 3. Visit `https://orochac.github.io`
 
 ### Manual Build
 
 ```bash
-# Build the site
 bundle exec jekyll build
-
 # Output is in _site/
 ```
 
-## 🔧 Configuration
-
-Key settings in `_config.yml`:
-
-- `title` - Site title
-- `description` - Site description
-- `url` - Site URL
-- `author` - Author information
-- `social` - Social media links
-
 ## 📚 Documentation
 
-- [ARCHITECTURE_PLAN.md](ARCHITECTURE_PLAN.md) - Technical architecture
-- [IMPLEMENTATION_ROADMAP.md](IMPLEMENTATION_ROADMAP.md) - Implementation details
-- [QUICK_START_GUIDE.md](QUICK_START_GUIDE.md) - Getting started guide
-- [ACADEMIC_CONTENT_GUIDE.md](ACADEMIC_CONTENT_GUIDE.md) - Academic content structure
-- [COMMUNICATION_SHOWCASE_GUIDE.md](COMMUNICATION_SHOWCASE_GUIDE.md) - Communication showcase
-- [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md) - Current status
+Comprehensive documentation is available in the `docs/` folder:
+
+- **[SETUP_GUIDE.md](docs/SETUP_GUIDE.md)** - Installation and troubleshooting
+- **[ARCHITECTURE_PLAN.md](docs/ARCHITECTURE_PLAN.md)** - Technical architecture
+- **[IMPLEMENTATION_ROADMAP.md](docs/IMPLEMENTATION_ROADMAP.md)** - Implementation details
+- **[QUICK_START_GUIDE.md](docs/QUICK_START_GUIDE.md)** - Getting started guide
+
+## 🔧 Development Commands
+
+```bash
+# Serve with drafts
+bundle exec jekyll serve --drafts
+
+# Serve with future posts
+bundle exec jekyll serve --future
+
+# Clean build
+bundle exec jekyll clean && bundle exec jekyll build
+
+# Check for errors
+bundle exec jekyll doctor
+```
 
 ## 🐛 Troubleshooting
 
 ### Site not building?
-
 ```bash
 bundle exec jekyll doctor
 ```
 
 ### Dependency issues?
-
 ```bash
 bundle update
 ```
 
 ### Port already in use?
-
 ```bash
 bundle exec jekyll serve --port 4001
 ```
+
+See [docs/SETUP_GUIDE.md](docs/SETUP_GUIDE.md) for more help.
 
 ## 📄 License
 
@@ -204,6 +208,7 @@ This project is open source and available under the MIT License.
 **Oscar Rochanakij**
 - GitHub: [@Orochac](https://github.com/Orochac)
 - Email: oscarr12345678@gmail.com
+- Instagram: [@oscarrchkij](https://instagram.com/oscarrchkij)
 
 ## 🙏 Acknowledgments
 
@@ -213,5 +218,4 @@ This project is open source and available under the MIT License.
 
 ---
 
-**Status**: Phase 1 Complete ✅  
-**Next**: Adding content pages and collections
+**Status**: Phase 1 Complete ✅ | Ready for Content
