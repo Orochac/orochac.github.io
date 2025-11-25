@@ -3,11 +3,13 @@ layout: single
 title: "Travel Map"
 permalink: /travel/map/
 author_profile: true
-header:
-  overlay_color: "#000"
-  overlay_filter: "0.5"
-  overlay_image: /assets/images/travel-header.jpg
+toc: false
+classes: wide
 ---
+
+<div class="travel-map-intro">
+  <p>Explore the places I've visited! Click on any marker to see details, photos, and blog posts from that location.</p>
+</div>
 
 <div id="travel-map" style="height: 600px; width: 100%; border-radius: 12px; margin: 2rem 0;"></div>
 
@@ -18,23 +20,71 @@ header:
 </div>
 
 <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+      crossorigin=""/>
 
 <!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+        crossorigin=""></script>
 
 <script>
+// Wait for DOM to be ready
+document.addEventListener('DOMContentLoaded', function() {
+  
 // Initialize the map
 const map = L.map('travel-map').setView([0, 100], 4);
 
 // Add OpenStreetMap tiles
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap contributors',
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   maxZoom: 18
 }).addTo(map);
 
-// Travel locations data - loaded from _data/travel_locations.yml
-const locations = {{ site.data.travel_locations | jsonify }};
+// Travel locations data
+const locations = [
+  {
+    name: "Singapore",
+    coords: [1.3521, 103.8198],
+    country: "Singapore",
+    description: "Gateway to Southeast Asia - modern city-state with incredible food and culture",
+    duration: "1 week",
+    dates: "July 2024",
+    highlights: [
+      "Marina Bay Sands",
+      "Gardens by the Bay",
+      "Hawker Centers",
+      "Sentosa Island"
+    ],
+    posts: [
+      { title: "First Post - Arrival in Singapore", url: "/blog-post/travel/sea-2024/First-post/" }
+    ],
+    google_photos_album: "https://photos.app.goo.gl/your-album-link"
+  },
+  {
+    name: "Sumatra, Indonesia",
+    coords: [0.5897, 101.3431],
+    country: "Indonesia",
+    description: "8 weeks exploring the wild heart of Indonesia - from volcanic lakes to rainforest treks",
+    duration: "8 weeks",
+    dates: "July - September 2024",
+    highlights: [
+      "Lake Toba - World's largest volcanic lake",
+      "Bukit Lawang - Orangutan trekking",
+      "Mount Sinabung - Active volcano",
+      "Traditional Batak villages"
+    ],
+    posts: [
+      { title: "Week One in Sumatra", url: "/blog-post/travel/sea-2024/weekly/Week-one/" },
+      { title: "Week Two in Sumatra", url: "/blog-post/travel/sea-2024/weekly/Week-two/" },
+      { title: "Week Three in Sumatra", url: "/blog-post/travel/sea-2024/weekly/Week-three/" },
+      { title: "Week Four in Sumatra", url: "/blog-post/travel/sea-2024/weekly/Week-four/" },
+      { title: "Week Five in Sumatra", url: "/blog-post/travel/sea-2024/weekly/Week-five/" }
+    ],
+    google_photos_album: "https://photos.app.goo.gl/your-sumatra-album"
+  }
+];
 
 // Custom marker icon
 const customIcon = L.divIcon({
@@ -43,48 +93,6 @@ const customIcon = L.divIcon({
   iconSize: [30, 30],
   iconAnchor: [15, 15]
 });
-
-// Add markers for each location
-locations.forEach(location => {
-  const marker = L.marker(location.coords, { icon: customIcon }).addTo(map);
-  
-  // Create popup content
-  let popupContent = `
-    <div class="map-popup">
-      <h3 style="margin: 0 0 0.5rem 0; color: #f5576c;">${location.name}</h3>
-      <p style="margin: 0 0 1rem 0; color: #666;">${location.description}</p>
-      <div style="margin-bottom: 1rem;">
-        <strong>Duration:</strong> ${location.duration}<br>
-        <strong>Highlights:</strong> ${location.highlights.join(', ')}
-      </div>
-  `;
-  
-  if (location.posts.length > 0) {
-    popupContent += '<div style="margin-top: 1rem;"><strong>Blog Posts:</strong><ul style="margin: 0.5rem 0; padding-left: 1.5rem;">';
-    location.posts.forEach(post => {
-      popupContent += `<li><a href="${post.url}" style="color: #f5576c;">${post.title}</a></li>`;
-    });
-    popupContent += '</ul></div>';
-  }
-  
-  popupContent += '</div>';
-  
-  marker.bindPopup(popupContent, {
-    maxWidth: 300,
-    className: 'custom-popup'
-  });
-  
-  // Show location details on click
-  marker.on('click', function() {
-    showLocationDetails(location);
-  });
-});
-
-// Fit map to show all markers
-if (locations.length > 0) {
-  const group = L.featureGroup(locations.map(loc => L.marker(loc.coords)));
-  map.fitBounds(group.getBounds().pad(0.1));
-}
 
 // Show location details function
 function showLocationDetails(location) {
@@ -147,6 +155,50 @@ function showLocationDetails(location) {
   // Smooth scroll to details
   detailsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
+
+// Add markers for each location
+locations.forEach(location => {
+  const marker = L.marker(location.coords, { icon: customIcon }).addTo(map);
+  
+  // Create popup content
+  let popupContent = `
+    <div class="map-popup">
+      <h3 style="margin: 0 0 0.5rem 0; color: #f5576c;">${location.name}</h3>
+      <p style="margin: 0 0 1rem 0; color: #666;">${location.description}</p>
+      <div style="margin-bottom: 1rem;">
+        <strong>Duration:</strong> ${location.duration}<br>
+        <strong>Highlights:</strong> ${location.highlights.join(', ')}
+      </div>
+  `;
+  
+  if (location.posts && location.posts.length > 0) {
+    popupContent += '<div style="margin-top: 1rem;"><strong>Blog Posts:</strong><ul style="margin: 0.5rem 0; padding-left: 1.5rem;">';
+    location.posts.forEach(post => {
+      popupContent += `<li><a href="${post.url}" style="color: #f5576c;">${post.title}</a></li>`;
+    });
+    popupContent += '</ul></div>';
+  }
+  
+  popupContent += '</div>';
+  
+  marker.bindPopup(popupContent, {
+    maxWidth: 300,
+    className: 'custom-popup'
+  });
+  
+  // Show location details on click
+  marker.on('click', function() {
+    showLocationDetails(location);
+  });
+});
+
+// Fit map to show all markers
+if (locations.length > 0) {
+  const group = L.featureGroup(locations.map(loc => L.marker(loc.coords)));
+  map.fitBounds(group.getBounds().pad(0.1));
+}
+
+}); // End DOMContentLoaded
 </script>
 
 <style>
@@ -302,25 +354,25 @@ function showLocationDetails(location) {
 
 ## How to Add New Locations
 
-To add a new location to the map, edit the `_data/travel_locations.yml` file and add a new entry:
+To add a new location to the map, edit this page and add to the `locations` array in the JavaScript above:
 
-```yaml
-- name: "City, Country"
-  coords: [latitude, longitude]
-  country: "Country Name"
-  description: "Brief description of your experience"
-  duration: "X weeks/days"
-  dates: "Month Year"
-  highlights:
-    - "Highlight 1"
-    - "Highlight 2"
-  posts:
-    - title: "Post Title"
-      url: "/blog-post/path/"
-  photos:
-    - id: "folder/image-name"
-      caption: "Photo caption"
+```javascript
+{
+  name: "City, Country",
+  coords: [latitude, longitude],
+  country: "Country Name",
+  description: "Brief description of your experience",
+  duration: "X weeks/days",
+  dates: "Month Year",
+  highlights: [
+    "Highlight 1",
+    "Highlight 2"
+  ],
+  posts: [
+    { title: "Post Title", url: "/blog-post/path/" }
+  ],
   google_photos_album: "https://photos.app.goo.gl/album-link"
+}
 ```
 
 **Finding Coordinates:**
@@ -329,8 +381,4 @@ To add a new location to the map, edit the `_data/travel_locations.yml` file and
 3. Click the coordinates to copy them
 4. Use format: `[latitude, longitude]`
 
-**Benefits of using YAML data file:**
-- Cleaner separation of data and presentation
-- Easier to maintain and update locations
-- Can be reused across multiple pages
-- Better version control and collaboration
+**Note:** The `_data/travel_locations.yml` file is also available for data-driven approach when Jekyll is running. This page works with or without Jekyll processing.
