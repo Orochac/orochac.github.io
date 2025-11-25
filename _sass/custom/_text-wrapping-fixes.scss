@@ -1,0 +1,533 @@
+// Text Wrapping and Responsive Typography Fixes
+// Ensures proper text wrapping across all devices
+// Updated: Smaller text, wider boxes, sharper edges
+
+/* Fix text wrapping on homepage feature cards */
+.feature__wrapper {
+  .feature__item {
+    .archive__item {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      border-radius: 4px; /* Sharper edges */
+      
+      .archive__item-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 1.25rem;
+        
+        .archive__item-title {
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          hyphens: none; /* Disable hyphenation for cleaner look */
+          margin-bottom: 0.75rem;
+          line-height: 1.4;
+          font-size: 1.1rem; /* Smaller title */
+          font-weight: 600;
+        }
+        
+        .archive__item-excerpt {
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          hyphens: none;
+          flex: 1;
+          font-size: 0.9rem; /* Smaller body text */
+          
+          p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: none;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem; /* Smaller paragraph text */
+          }
+        }
+      }
+      
+      .archive__item-teaser {
+        min-height: 120px; /* Slightly shorter */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+        border-radius: 4px 4px 0 0; /* Sharp top corners */
+        
+        i {
+          color: #e91e63;
+          font-size: 2.5rem; /* Slightly smaller icon */
+        }
+      }
+    }
+  }
+}
+
+/* Fluid responsive layout - FORCE with !important */
+.feature__wrapper,
+.splash .feature__wrapper,
+.page .feature__wrapper {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; /* 3 equal columns */
+  gap: 1.5rem !important;
+  margin: 2rem auto !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 1rem !important;
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 columns on tablets */
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr !important; /* 1 column on mobile */
+    gap: 1.25rem !important;
+    padding: 0 0.5rem !important;
+  }
+}
+
+/* Feature items fill their column space */
+.feature__item {
+  min-width: 0 !important; /* Allow shrinking to fit */
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Smaller, cleaner typography across site */
+body {
+  font-size: 15px; /* Slightly smaller base font */
+  line-height: 1.6;
+}
+
+.page__content {
+  font-size: 0.95rem; /* Smaller content text */
+  line-height: 1.7;
+}
+
+/* Ensure proper text wrapping across all content */
+.page__content,
+.archive__item-excerpt,
+.archive__item-title,
+h1, h2, h3, h4, h5, h6,
+p, li, td, th {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: none; /* Disable hyphenation for cleaner look */
+}
+
+/* Prevent long URLs from breaking layout */
+a {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Sharper edges for all rounded elements */
+.archive__item,
+.btn,
+.notice,
+.highlight,
+pre,
+code,
+blockquote,
+.page__hero,
+img {
+  border-radius: 4px !important; /* Sharp edges everywhere */
+}
+
+/* Ensure grid items don't overflow */
+.grid__wrapper,
+.feature__wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.grid__item,
+.feature__item {
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Fix for narrow viewports */
+@media (max-width: 480px) {
+  .feature__wrapper,
+  .grid__wrapper {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .archive__item-excerpt {
+    font-size: 0.85rem; /* Even smaller on mobile */
+    line-height: 1.5;
+  }
+  
+  .archive__item-title {
+    font-size: 1rem;
+  }
+  
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Smaller, tighter typography */
+h1 { 
+  font-size: 1.9rem; 
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+h2 { 
+  font-size: 1.5rem; 
+  line-height: 1.3;
+  margin-bottom: 0.875rem;
+}
+
+h3 { 
+  font-size: 1.25rem; 
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+h4 { 
+  font-size: 1.1rem; 
+  line-height: 1.4;
+  margin-bottom: 0.625rem;
+}
+
+h5, h6 {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive typography - even smaller on tablets/mobile */
+@media (max-width: 1024px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.2rem; }
+  h4 { font-size: 1.05rem; }
+  
+  .page__title {
+    font-size: 1.75rem;
+  }
+  
+  .archive__item-title {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.15rem; }
+  
+  .page__title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Ensure buttons don't break layout */
+.btn {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: inline-block;
+  font-size: 0.85rem; /* Smaller button text */
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px !important; /* Sharp edges */
+  
+  @media (max-width: 480px) {
+    white-space: normal;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Fix for intro section */
+.intro {
+  .feature__item {
+    text-align: center;
+    
+    .archive__item-excerpt {
+      p {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 0.95rem; /* Smaller intro text */
+      }
+    }
+  }
+}
+
+/* Ensure page content doesn't overflow */
+.page__inner-wrap,
+.page__content {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Fix for long words in titles */
+.page__title,
+.archive__item-title {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: none;
+  max-width: 100%;
+}
+
+/* Wider content area */
+.page__content {
+  max-width: 1200px; /* Wider content */
+  
+  @media (max-width: 480px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Fix for notice boxes - sharper, smaller text */
+.notice {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  border-radius: 4px !important;
+  font-size: 0.9rem;
+  
+  p, li {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-size: 0.9rem;
+  }
+}
+
+/* Fix for code blocks on mobile - sharper edges */
+pre, code {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  border-radius: 4px !important;
+  font-size: 0.85rem; /* Smaller code */
+  
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+}
+
+/* Ensure tables are responsive */
+table {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: 0.9rem; /* Smaller table text */
+  border-radius: 4px !important;
+  
+  td, th {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 300px;
+    padding: 0.5rem 0.75rem; /* Tighter padding */
+    font-size: 0.9rem;
+    
+    @media (max-width: 768px) {
+      max-width: 150px;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+/* Fix for sidebar on mobile */
+.sidebar {
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .author__avatar {
+    img {
+      border-radius: 4px !important; /* Sharper avatar */
+    }
+  }
+}
+
+/* Ensure images don't overflow - sharper edges */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px !important;
+}
+
+/* Fix for embedded content */
+iframe, embed, object {
+  max-width: 100%;
+  border-radius: 4px !important;
+}
+
+/* Responsive video embeds */
+.responsive-video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 4px !important;
+  
+  iframe, embed, object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px !important;
+  }
+}
+
+/* Tighter spacing overall */
+.page__content {
+  p {
+    margin-bottom: 0.875rem;
+  }
+  
+  ul, ol {
+    margin-bottom: 0.875rem;
+    
+    li {
+      margin-bottom: 0.375rem;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+/* Make single layout pages use full width */
+.layout--single .page__inner-wrap {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.layout--single .page__content {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 2rem !important;
+  
+  @media (max-width: 768px) {
+    padding: 0 1rem !important;
+  }
+}
+
+/* Make sidebar narrower or hide on smaller screens */
+.layout--single .sidebar {
+  @media (max-width: 1024px) {
+    display: none !important; /* Hide sidebar on tablets and mobile */
+  }
+}
+
+/* When sidebar is visible, adjust content width */
+@media (min-width: 1025px) {
+  .layout--single .page {
+    display: grid !important;
+    grid-template-columns: 250px 1fr !important; /* Sidebar + Content */
+    gap: 2rem !important;
+    max-width: 100% !important;
+  }
+  
+  .layout--single .page__content {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* Ensure all text content uses full width */
+.page__content p,
+.page__content ul,
+.page__content ol,
+.page__content blockquote {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+
+/* Sharper blockquotes */
+blockquote {
+  border-radius: 4px !important;
+  font-size: 0.95rem;
+  padding: 0.875rem 1.25rem;
+}
+
+/* Sharper pagination */
+.pagination {
+  a, span {
+    border-radius: 4px !important;
+    font-size: 0.9rem;
+  }
+}
+
+/* Make masthead/header more compact */
+.masthead {
+  padding: 0.75rem 1rem;
+  
+  .site-title {
+    font-size: 1.1rem;
+  }
+  
+  .greedy-nav {
+    a {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* Tighter footer */
+.page__footer {
+  font-size: 0.85rem;
+  padding: 1.5rem 0;
+}
+
+// Made with Bob
+// FLUID RESPONSIVE COLUMNS - Fit to width on all displays
+// Columns automatically adjust to fill available space
+
+/* Fluid grid that adapts to any screen size */
+.page__content .feature__wrapper,
+.page__inner-wrap .feature__wrapper,
+body .feature__wrapper,
+html .feature__wrapper {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; /* 3 equal columns on desktop */
+  gap: 1.5rem !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+  padding: 0 1rem !important;
+}
+
+/* Feature items fill their column space */
+.page__content .feature__item,
+.page__inner-wrap .feature__item,
+body .feature__item,
+html .feature__item {
+  min-width: 0 !important; /* Allow shrinking */
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Responsive: 2 columns on medium screens */
+@media (max-width: 1024px) {
+  .page__content .feature__wrapper,
+  .page__inner-wrap .feature__wrapper,
+  body .feature__wrapper,
+  html .feature__wrapper {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 equal columns */
+  }
+}
+
+/* Responsive: 1 column on mobile */
+@media (max-width: 768px) {
+  .page__content .feature__wrapper,
+  .page__inner-wrap .feature__wrapper,
+  body .feature__wrapper,
+  html .feature__wrapper {
+    grid-template-columns: 1fr !important; /* Single column */
+    padding: 0 0.5rem !important;
+  }
+}

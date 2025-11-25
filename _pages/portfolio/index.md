@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: sidebar
 title: "Portfolio"
 permalink: /portfolio/
 author_profile: true

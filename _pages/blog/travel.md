@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: sidebar
 title: "Travel Blog"
 permalink: /blog/travel/
 author_profile: true

@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: sidebar
 title: "Publications & Research"
 permalink: /academic/publications/
 author_profile: true

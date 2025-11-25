@@ -82,4 +82,7 @@
 <url>
 <loc>http://localhost:4000/Resources/</loc>
 </url>
+<url>
+<loc>http://localhost:4000/SIDEBAR_IMPLEMENTATION_SUMMARY/</loc>
+</url>
 </urlset>

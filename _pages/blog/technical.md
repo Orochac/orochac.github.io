@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: sidebar
 title: "Technical Blog"
 permalink: /blog/technical/
 author_profile: true

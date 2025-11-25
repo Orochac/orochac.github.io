@@ -12,8 +12,10 @@
 @import "custom/variables";
 
 /* Import custom styles */
+@import "custom/sidebar-layout";
 @import "custom/dark-mode";
 @import "custom/responsive";
+@import "custom/text-wrapping-fixes";
 
 /* Performance optimizations */
 * {
@@ -338,5 +340,143 @@ hr {
   background-color: var(--primary-color);
   color: var(--bg-primary);
 }
+
+/* Fix text wrapping on homepage feature cards */
+.feature__wrapper {
+  .feature__item {
+    .archive__item {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      
+      .archive__item-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: $spacing-md;
+        
+        .archive__item-title {
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          hyphens: auto;
+          margin-bottom: $spacing-sm;
+        }
+        
+        .archive__item-excerpt {
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          hyphens: auto;
+          flex: 1;
+          
+          p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            line-height: 1.6;
+          }
+        }
+      }
+      
+      .archive__item-teaser {
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--bg-tertiary);
+        
+        i {
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+}
+
+/* Ensure proper text wrapping across all content */
+.page__content,
+.archive__item-excerpt,
+.archive__item-title,
+h1, h2, h3, h4, h5, h6,
+p, li, td, th {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Prevent long URLs from breaking layout */
+a {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Fix for splash page feature rows */
+.splash .feature__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-lg;
+  margin: $spacing-xl 0;
+  
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ensure grid items don't overflow */
+.grid__wrapper,
+.feature__wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.grid__item,
+.feature__item {
+  min-width: 0; /* Allows flex items to shrink below content size */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Fix for narrow viewports */
+@media (max-width: $breakpoint-sm) {
+  .feature__wrapper,
+  .grid__wrapper {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .archive__item-excerpt {
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+}
+
+/* Responsive typography */
+@media (max-width: $breakpoint-md) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  h4 { font-size: 1.1rem; }
+  
+  .page__title {
+    font-size: 1.75rem;
+  }
+  
+  .archive__item-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Ensure buttons don't break layout */
+.btn {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  
+  @media (max-width: $breakpoint-sm) {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
 
 // Made with Bob

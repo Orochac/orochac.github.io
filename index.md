@@ -1,69 +1,60 @@
 ---
-layout: splash
-title: "Oscar Rochanakij"
+layout: sidebar
+title: "Home"
 permalink: /
-header:
-  overlay_color: "#000"
-  overlay_filter: "0.5"
-  overlay_image: /assets/images/hero-bg.jpg
-  actions:
-    - label: "View Resume"
-      url: "/professional/resume/"
-    - label: "Explore Projects"
-      url: "/portfolio/"
-  caption: "Mathematics • Computer Science • Travel"
 excerpt: "Bridging theory and practice through mathematics, computer science, and continuous exploration"
-intro:
-  - excerpt: 'Master of Science in Mathematics & Statistics • Bachelor of Science in Computing & Software Systems • IT Lead • Educator • Explorer'
-feature_row:
-  - image_path: /assets/images/professional-thumb.jpg
-    alt: "Professional Work"
-    title: "Professional"
-    excerpt: "IT Lead with expertise in automation, system design, and team enablement. Proven track record in delivering scalable solutions."
-    url: "/professional/resume/"
-    btn_label: "View Resume"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/academic-thumb.jpg
-    alt: "Academic Work"
-    title: "Academic"
-    excerpt: "Research in pure mathematics, university projects, and independent explorations in mathematical concepts and computer science."
-    url: "/academic/"
-    btn_label: "Explore Academic Work"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/travel-thumb.jpg
-    alt: "Travel Adventures"
-    title: "Travel"
-    excerpt: "Documenting adventures across Asia with photography, stories, and cultural insights from 8 weeks in Southeast Asia and beyond."
-    url: "/travel/"
-    btn_label: "View Travel Map"
-    btn_class: "btn--primary"
-feature_row2:
-  - image_path: /assets/images/portfolio-thumb.jpg
-    alt: "Project Portfolio"
-    title: "Portfolio & Projects"
-    excerpt: "From automation frameworks to mathematical investigations, explore projects spanning industry work and personal explorations."
-    url: "/portfolio/"
-    btn_label: "View Projects"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/communication-thumb.jpg
-    alt: "Communication & Teaching"
-    title: "Communication"
-    excerpt: "Teaching, corporate training, client workshops, and content creation. Making complex concepts accessible across diverse audiences."
-    url: "/academic/teaching/"
-    btn_label: "View Teaching Work"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/blog-thumb.jpg
-    alt: "Blog"
-    title: "Blog"
-    excerpt: "Technical tutorials, mathematical explorations, travel stories, and insights from continuous learning and adventure."
-    url: "/Blog/"
-    btn_label: "Read Blog"
-    btn_class: "btn--primary"
 ---
 
 {% include feature_row id="intro" type="center" %}
 
-{% include feature_row %}
+## Professional & Academic
+
+<div class="feature__wrapper">
+  <div class="feature__item">
+    <div class="archive__item">
+      <div class="archive__item-teaser">
+        <i class="fas fa-briefcase fa-3x"></i>
+      </div>
+      <div class="archive__item-body">
+        <h3 class="archive__item-title">Professional</h3>
+        <div class="archive__item-excerpt">
+          <p>IT Lead with expertise in automation, system design, and team enablement. Proven track record in delivering scalable solutions.</p>
+        </div>
+        <p><a href="/professional/resume/" class="btn btn--primary btn--small">View Resume</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature__item">
+    <div class="archive__item">
+      <div class="archive__item-teaser">
+        <i class="fas fa-graduation-cap fa-3x"></i>
+      </div>
+      <div class="archive__item-body">
+        <h3 class="archive__item-title">Academic</h3>
+        <div class="archive__item-excerpt">
+          <p>Research in pure mathematics, university projects, and independent explorations in mathematical concepts and computer science.</p>
+        </div>
+        <p><a href="/academic/publications/" class="btn btn--primary btn--small">View Publications</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature__item">
+    <div class="archive__item">
+      <div class="archive__item-teaser">
+        <i class="fas fa-map-marked-alt fa-3x"></i>
+      </div>
+      <div class="archive__item-body">
+        <h3 class="archive__item-title">Travel</h3>
+        <div class="archive__item-excerpt">
+          <p>Documenting adventures across Asia with photography, stories, and cultural insights from 8 weeks in Southeast Asia and beyond.</p>
+        </div>
+        <p><a href="/travel/map/" class="btn btn--primary btn--small">View Travel Map</a></p>
+      </div>
+    </div>
+  </div>
+</div>
 
 ## Recent Highlights
 
@@ -71,7 +62,7 @@ feature_row2:
   <div class="feature__item">
     <div class="archive__item">
       <div class="archive__item-teaser">
-        <i class="fas fa-graduation-cap fa-3x"></i>
+        <i class="fas fa-award fa-3x"></i>
       </div>
       <div class="archive__item-body">
         <h3 class="archive__item-title">Master of Science</h3>
@@ -85,7 +76,7 @@ feature_row2:
   <div class="feature__item">
     <div class="archive__item">
       <div class="archive__item-teaser">
-        <i class="fas fa-briefcase fa-3x"></i>
+        <i class="fas fa-rocket fa-3x"></i>
       </div>
       <div class="archive__item-body">
         <h3 class="archive__item-title">IT Lead</h3>
@@ -102,16 +93,64 @@ feature_row2:
         <i class="fas fa-globe-asia fa-3x"></i>
       </div>
       <div class="archive__item-body">
-        <h3 class="archive__item-title">Southeast Asia Journey</h3>
+        <h3 class="archive__item-title">Interactive Travel Map</h3>
         <div class="archive__item-excerpt">
-          <p>8 weeks exploring Sumatra, Singapore, and beyond - documenting culture, nature, and adventure</p>
+          <p>8 weeks exploring Sumatra, Singapore, and beyond - now with an interactive map showing destinations, photos, and blog posts</p>
         </div>
+        <p><a href="/travel/map/" class="btn btn--primary btn--small">Explore Map</a></p>
       </div>
     </div>
   </div>
 </div>
 
-{% include feature_row id="feature_row2" %}
+## Portfolio & Content
+
+<div class="feature__wrapper">
+  <div class="feature__item">
+    <div class="archive__item">
+      <div class="archive__item-teaser">
+        <i class="fas fa-code fa-3x"></i>
+      </div>
+      <div class="archive__item-body">
+        <h3 class="archive__item-title">Portfolio & Projects</h3>
+        <div class="archive__item-excerpt">
+          <p>From automation frameworks to mathematical investigations, explore projects spanning industry work and personal explorations.</p>
+        </div>
+        <p><a href="/portfolio/" class="btn btn--primary btn--small">View Projects</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature__item">
+    <div class="archive__item">
+      <div class="archive__item-teaser">
+        <i class="fas fa-chalkboard-teacher fa-3x"></i>
+      </div>
+      <div class="archive__item-body">
+        <h3 class="archive__item-title">Communication</h3>
+        <div class="archive__item-excerpt">
+          <p>Teaching, corporate training, client workshops, and content creation. Making complex concepts accessible across diverse audiences.</p>
+        </div>
+        <p><a href="/professional/contact/" class="btn btn--primary btn--small">Get in Touch</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature__item">
+    <div class="archive__item">
+      <div class="archive__item-teaser">
+        <i class="fas fa-blog fa-3x"></i>
+      </div>
+      <div class="archive__item-body">
+        <h3 class="archive__item-title">Blog</h3>
+        <div class="archive__item-excerpt">
+          <p>Technical tutorials, mathematical explorations, travel stories, and insights from continuous learning and adventure.</p>
+        </div>
+        <p><a href="/blog/" class="btn btn--primary btn--small">Read Blog</a></p>
+      </div>
+    </div>
+  </div>
+</div>
 
 ## Skills & Expertise
 
@@ -143,7 +182,7 @@ feature_row2:
 </div>
 
 <div style="text-align: center; margin-top: 2em;">
-  <a href="/Blog/" class="btn btn--primary btn--large">View All Posts</a>
+  <a href="/blog/" class="btn btn--primary btn--large">View All Posts</a>
 </div>
 
 ## Get in Touch

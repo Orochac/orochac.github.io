@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: sidebar
 title: "Skills & Expertise"
 permalink: /professional/skills/
 author_profile: true

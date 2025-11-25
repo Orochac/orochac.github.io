@@ -222,7 +222,7 @@
 </script>
   </head>
 
-  <body class="layout--single">
+  <body class="layout--sidebar">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -303,67 +303,310 @@
 
 
     <div class="initial-content">
-      
-
-
-
-
-
-<div id="main" role="main">
-  
-
-
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="About">
-    
-    
-    
-
-    <div class="page__inner-wrap">
-      
-        <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">
-            <a href="http://localhost:4000/about/" itemprop="url">About
-</a>
-          </h1>
-          
-
-
-        </header>
-      
-
-      <section class="page__content" itemprop="text">
+      <div class="sidebar-layout">
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar-nav">
+    <div class="sidebar-header">
+      <a href="/" class="site-logo">
         
+        <img src="/assets/images/profile.jpg" alt="Oscar Rochanakij" class="sidebar-avatar">
+        
+        <h2 class="site-title">Oscar Rochanakij</h2>
+      </a>
+      <p class="site-subtitle">Mathematics • Computer Science • Travel</p>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="sidebar-menu">
+      
+      <div class="nav-item">
+        <a href="/" class="nav-link ">
+          Home
+        </a>
+        
+      </div>
+      
+      <div class="nav-item">
+        <a href="/professional/" class="nav-link ">
+          Professional
+        </a>
+        
+        <ul class="nav-submenu">
+          
+          <li>
+            <a href="/professional/resume/" class="">
+              Resume/CV
+            </a>
+          </li>
+          
+          <li>
+            <a href="/professional/skills/" class="">
+              Skills
+            </a>
+          </li>
+          
+          <li>
+            <a href="/professional/contact/" class="">
+              Contact
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+      
+      <div class="nav-item">
+        <a href="/portfolio/" class="nav-link ">
+          Portfolio
+        </a>
+        
+        <ul class="nav-submenu">
+          
+          <li>
+            <a href="/portfolio/" class="">
+              All Projects
+            </a>
+          </li>
+          
+          <li>
+            <a href="/portfolio/industry/" class="">
+              Industry Work
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+      
+      <div class="nav-item">
+        <a href="/academic/" class="nav-link ">
+          Academic
+        </a>
+        
+        <ul class="nav-submenu">
+          
+          <li>
+            <a href="/academic/research/" class="">
+              Research
+            </a>
+          </li>
+          
+          <li>
+            <a href="/academic/university/" class="">
+              University Projects
+            </a>
+          </li>
+          
+          <li>
+            <a href="/academic/independent/" class="">
+              Independent Study
+            </a>
+          </li>
+          
+          <li>
+            <a href="/academic/teaching/" class="">
+              Teaching
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+      
+      <div class="nav-item">
+        <a href="/travel/" class="nav-link ">
+          Travel
+        </a>
+        
+        <ul class="nav-submenu">
+          
+          <li>
+            <a href="/travel/map/" class="">
+              Travel Map
+            </a>
+          </li>
+          
+          <li>
+            <a href="/travel/gallery/" class="">
+              Photo Galleries
+            </a>
+          </li>
+          
+          <li>
+            <a href="/travel/trips/" class="">
+              Trip Stories
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+      
+      <div class="nav-item">
+        <a href="/Blog/" class="nav-link ">
+          Blog
+        </a>
+        
+        <ul class="nav-submenu">
+          
+          <li>
+            <a href="/Blog/" class="">
+              All Posts
+            </a>
+          </li>
+          
+          <li>
+            <a href="/blog/technical/" class="">
+              Technical
+            </a>
+          </li>
+          
+          <li>
+            <a href="/blog/travel/" class="">
+              Travel
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+      
+      <div class="nav-item">
+        <a href="/about/" class="nav-link active">
+          About
+        </a>
+        
+      </div>
+      
+    </nav>
+
+    <!-- Dark Mode Toggle -->
+    <div class="sidebar-toggle">
+      <button id="dark-mode-toggle-sidebar" class="dark-mode-btn" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+        <span>Dark Mode</span>
+      </button>
+    </div>
+
+    <!-- Footer in Sidebar -->
+    <footer class="sidebar-footer">
+      <div class="social-links">
+        
+        <a href="https://github.com/orochac" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fab fa-fw fa-github"></i>
+        </a>
+        
+        <a href="https://instagram.com/oscarrchkij" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fab fa-fw fa-instagram"></i>
+        </a>
+        
+      </div>
+      <p class="copyright">
+        &copy; 2025 Oscar Rochanakij
+      </p>
+      <p class="built-with">
+        Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>
+      </p>
+    </footer>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <!-- Mobile Header (hidden on desktop) -->
+    <header class="mobile-header">
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <h1 class="mobile-title">Oscar Rochanakij</h1>
+      <button id="dark-mode-toggle-mobile" class="dark-mode-btn-mobile" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </header>
+
+    <!-- Page Content -->
+    <article class="page-content">
+      
+      <header class="page-header">
+        <h1 class="page-title">About</h1>
+        
+      </header>
+      
+
+      <div class="page-body">
         <p>This website is for hosting my personal blog as well as CV and Projects.</p>
 
 <p>This site is not intended to be used as an online business, e-commerce site, or any other website that is primarily directed at either facilitating commercial transactions or providing commercial software as a service (SaaS). This site is not used for sensitive transactions like sending passwords or credit card numbers.</p>
 
 <p>In accordance with Github Pages Terms of Service your IP address is logged and stored for security purposes, regardless of whether you have signed into GitHub or not.</p>
 
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-
-
-        
-
-      </footer>
-
-      
-
-      
-    </div>
-
-    
-  </article>
-
-  
-  
+      </div>
+    </article>
+  </main>
 </div>
 
+<!-- Mobile Menu Overlay -->
+<div class="mobile-overlay"></div>
+
+<script>
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const sidebar = document.querySelector('.sidebar-nav');
+  const overlay = document.querySelector('.mobile-overlay');
+  
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    });
+  }
+  
+  if (overlay) {
+    overlay.addEventListener('click', function() {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    });
+  }
+
+  // Sync dark mode toggles
+  const sidebarToggle = document.getElementById('dark-mode-toggle-sidebar');
+  const mobileToggle = document.getElementById('dark-mode-toggle-mobile');
+  
+  function syncDarkMode() {
+    const isDark = document.body.classList.contains('dark-mode');
+    if (sidebarToggle) {
+      sidebarToggle.querySelector('i').className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    }
+    if (mobileToggle) {
+      mobileToggle.querySelector('i').className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    }
+  }
+
+  if (sidebarToggle) {
+    sidebarToggle.addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+      syncDarkMode();
+    });
+  }
+
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+      syncDarkMode();
+    });
+  }
+
+  // Load dark mode preference
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+  }
+  syncDarkMode();
+});
+</script>
       
     </div>
 

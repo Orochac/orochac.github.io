@@ -1,8 +1,7 @@
 ---
-layout: single
+layout: sidebar
 title: "Resume / CV"
 permalink: /professional/resume/
-author_profile: true
 toc: true
 toc_label: "Contents"
 toc_icon: "file-alt"

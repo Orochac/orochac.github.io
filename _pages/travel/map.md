@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: sidebar
 title: "Travel Map"
 permalink: /travel/map/
 author_profile: true

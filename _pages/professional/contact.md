@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: sidebar
 title: "Get in Touch"
 permalink: /professional/contact/
 author_profile: true
